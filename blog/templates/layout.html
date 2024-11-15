@@ -13,9 +13,9 @@
 </head>
 <body>
     <nav>
-        <a href="/">🏡</a> |
-        <a href="/about">😀</a> |
-        <a href="/posts">📪</a>
+        <a href="/"><span role="img" aria-label="Home">🏡</span></a> |    {# The span tag is added to make sure the emoji is correctly translated in all browsers and screens as it is, and if the browser doesnt support this emoji, the label "Home" will be used for accessebility #}
+        <a href="/about"><span role="img" aria-label="About">😀</span></a> |
+        <a href="{% url 'posts:list' %}"><span role="img" aria-label="Posts">📪</span></a> {# post:list refers to the named url views.posts_list in the urls.py of the posts app#}
     </nav>
 
     <main>

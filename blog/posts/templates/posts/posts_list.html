@@ -7,9 +7,13 @@
 {% block content%}
 <section>
     <h1>Posts</h1>
-    {% for post in posts %}
+    {% for post in posts %}  {# This 'posts' is actually passed to this from the posts_lists view. Refer to line 8 of the views.py file #}
     <article class="post_style">
-        <h2>{{post.title}}</h2>
+        <h2>
+            <a href="{% url 'posts:page' slug=post.slug %}">  {# Here in 'slug=post.slug', we are referring to the 'post' from line 10: which was {% for post in posts %} #}
+                {{post.title}}
+            </a>
+        </h2>
         <p>{{post.date}}</p>
         <p>{{post.body}}</p>
     </article>
